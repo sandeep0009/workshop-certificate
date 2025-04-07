@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/Signup";
@@ -15,7 +15,7 @@ function App() {
     <>
 
     <Routes>
-      <Route path="/signup" element={<SignUp/>}/>
+    <Route path="/" element={<Navigate to="/signup" replace />} />
       <Route path="/signin" element={<SignIn/>}/> 
       <Route path="/admin-dashboard"  element={<ProtectedAdminRoute children={<AdminDetails />} />}/>
       <Route path="/admin-dashobard/:id" element={<ProtectedAdminRoute children={<ManageAdmin/>}/>}/>
